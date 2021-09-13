@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AddPostPage = () => {
-    
+
     return (
         <form className='myForm'>
             <h2>Create post</h2>

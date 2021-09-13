@@ -1,4 +1,3 @@
-import { set } from 'lodash';
 import React, { useState } from 'react';
 import { usePostsSelector } from "customHooks/stateSelectors";
 

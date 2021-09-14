@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { usePostsSelector } from "customHooks/stateSelectors";
 import { useDispatch } from 'react-redux';
 import { postsActions } from "../slices/posts";
-import { Redirect } from 'react-router';
 import { useHistory } from 'react-router-dom';
 
 
 
 
-const AddPostPage = () => {
+const UpdatePostPage = () => {
     const dispatch = useDispatch();
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
@@ -32,4 +31,4 @@ const AddPostPage = () => {
     );
 };
 
-export default AddPostPage;
+export default UpdatePostPage;

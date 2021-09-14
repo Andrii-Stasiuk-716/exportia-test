@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { postActions } from "slices/post";
-import { usePostSelector } from "./stateSelectors";
+import { usePostSelector, usePostsSelector } from "./stateSelectors";
 import { Post } from "components/Post";
 import { isEmpty } from "lodash";
 
@@ -13,11 +13,14 @@ import { isEmpty } from "lodash";
 export const usePost = () => {
   const dispatch = useDispatch();
   const { id: postId = "" } = useParams();
+  const { list } = usePostsSelector();
+  const post = list.find(item => item.id == postId)
   const {
-    data: post,
+    // data: post,
     loading: postLoading,
     errors: postErrors
   } = usePostSelector();
+
 
   useEffect(() => {
     dispatch(postActions.getPost(postId));

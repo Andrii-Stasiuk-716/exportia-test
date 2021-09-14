@@ -16,10 +16,10 @@ const PostsPage = () => {
   const { data } = useSettingsSelector();
   console.log("Settings", data);
 
-  useEffect(() => {
-    dispatch(postsActions.getPosts());
-    dispatch(settingsActions.getSettings());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(postsActions.getPosts());
+  //   dispatch(settingsActions.getSettings());
+  // }, []);
 
   const renderPosts = () => {
     if (loading) return <p>Loading posts...</p>;

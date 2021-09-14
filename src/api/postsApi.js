@@ -31,9 +31,9 @@ export async function fetchAddPost({ title, body }) {
   return response.json();
 }
 
-export async function fetchUpdatePost({ title, body, id }) {
+export async function fetchUpdatePost({ title, body, id, userId }) {
   const response = await fetch(`${BASE_URL.MAIN}/posts/${id}`, {
-    method: 'PUT',
+    method: 'PATCH',
     headers: {
       'Content-type': 'application/json' 
     },

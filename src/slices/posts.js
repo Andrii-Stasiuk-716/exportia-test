@@ -23,13 +23,21 @@ const postsSlice = createSlice({
       state.loading = false;
       state.errors = true;
     },
-    addPost: (state, { payload }) => {
+    addPostSuccess: (state, { payload }) => {
       state.list = [{
         userId: 1,
         id: state.list.length + 1,
         title: payload.title,
         body: payload.body
       }, ...state.list]
+    },
+    updatePostSuccess: (state, { payload }) => {
+      state.list = state.list.map(item => {
+        if(item.id == payload.id) {
+          return payload
+        }
+        return item
+      })
     }
   }
 });
@@ -38,5 +46,6 @@ const postsActionCreator = getApiActionCreator("posts");
 export const postsActions = {
   ...postsActionCreator("getPosts"),
   ...postsActionCreator("addPost"),
+  ...postsActionCreator("updatePost"),
 };
 export default postsSlice.reducer;

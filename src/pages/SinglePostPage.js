@@ -1,6 +1,7 @@
 import React from "react";
 import { usePost } from "customHooks/usePost";
 import { useComments } from "customHooks/useComments";
+import { Link } from "react-router-dom";
 
 const SinglePostPage = () => {
   // We split logic into multiple hooks to avoid poluting
